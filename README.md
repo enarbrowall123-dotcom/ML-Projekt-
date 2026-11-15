@@ -26,20 +26,20 @@ I tried linear regression (Ridge), a decision tree, a random forest and XGBoost,
 
 | Model | RMSE |
 |---|---|
-| Predict the mean (baseline) | 2.72 ¬± 0.18 |
-| Ridge, alpha = 10 | 2.25 ¬± 0.19 |
-| XGBoost | 2.27 ¬± 0.16 |
+| Predict the mean (baseline) | 2.72 ± 0.18 |
+| Ridge, alpha = 10 | 2.25 ± 0.19 |
+| XGBoost | 2.27 ± 0.16 |
 
 They're basically tied, so I went with Ridge since it's simpler and easier to explain. On the test set it got an RMSE of 2.14, so predictions are about 2 grade points off on average. Not perfect, but good enough to flag students who are likely to end up below the passing grade of 10.
 
 ## Running it
 
-You need Python 3.12 and [uv](https://docs.astral.sh/uv/) (`pip install uv`).
+You need Python 3.12 and [uv](https://docs.astral.sh/uv/)
 
 ```bash
 uv sync
-uv run python train.py      # trains the model and saves model.bin
-uv run python predict.py    # starts the API on port 9696
+uv run python train.py      
+uv run python predict.py    
 ```
 
 Then in another terminal:
